@@ -1,42 +1,44 @@
 <!DOCTYPE html>
 <html>
  <title> Assignment-6</title>
- <head> <h5>President guess by Madhuri Nagulapally
-     </h5>
+ <head> <h1>President guess by Madhuri Nagulapally
+     </h1>
  </head>
 <body>
 
-<h2>Getting input</h2>
+    <h2>Getting input</h2>
 
-<form>
-    <label for="form1_age">What is your age </label>
-    <input type ="number" id="form1_age" name="form1_age" min=10 max=50 step=2 value=30> <br>
+    <form>
+    <label for="form1_name">Enter the secret president name </label>
+    <input type ="password" id="form1_name" name="form1_name" min=10 max=50 step=2 value="George Washington"> <br>
 
-    <label for="form1_nick">What is your nickname </label>
-    <input type ="text" id="form1_nick" name="form1_nick" autofocus> <br>
+    <label for="form1_guess">Guess the president </label>
+    <input type ="text" id="form1_guess" name="form1_guess" autofocus> <br>
 
-    <input type="button" onclick="resolveForm()" value="Get values from form">
+    <input type="button" onclick="checkGuess()" value="Check the guess">
 </form>
 
 
-<p id="result">This text will be replaced </p>
-
+<p id="result">count </p>
 <script> 
-
-function resolveForm (){
-    console.log("Getting form values")
-    age = document.getElementById("form1_age").value
-    nick = document.getElementById("form1_nick").value
-    confirmed = confirm("Are these the values? "+age+" and "+nick)
-    
-    out = document.getElementById("result")
-    if(confirmed){
-        out.innerHTML = "Values were confirmed"
-    } else {
-        out.innerHTML = "Values were not confirmed"
+    correct=0
+    wrong=0
+    function checkGuess (){
+        console.log("Getting form values")
+        name = document.getElementById("form1_name").value
+        guess = document.getElementById("form1_guess").value
+        out = document.getElementById("result")
+        if(name == guess){
+            correct++
+            alert("You got it right")
+            out.innerHTML ="count ="+correct
+        } else {
+            wrong++
+            alert("Wrong President")
+            out.innerHTML ="count ="+wrong
+        }
     }
-}
-</script>
+    </script>
 
 </body>
 </html> 
