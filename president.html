@@ -11,15 +11,15 @@
     <form>
     <label for="form1_name">Enter the secret president name </label>
     <input type ="password" id="form1_name" name="form1_name" min=10 max=50 step=2 value="George Washington"> <br>
-
+<br>
     <label for="form1_guess">Guess the president </label>
     <input type ="text" id="form1_guess" name="form1_guess" autofocus> <br>
-
+<br>
     <input type="button" onclick="checkGuess()" value="Check the guess">
 </form>
 
 
-<p id="result">count </p>
+<p id="result">This text will be replaced </p>
 <script> 
     correct=0
     wrong=0
@@ -31,14 +31,36 @@
         if(name == guess){
             correct++
             alert("You got it right")
-            out.innerHTML ="count ="+correct
+            out.innerHTML ="Correct " + correct +  " Wrong " + wrong;
         } else {
             wrong++
             alert("Wrong President")
-            out.innerHTML ="count ="+wrong
+            out.innerHTML =" correct "+ correct + " wrong " + wrong;
         }
     }
     </script>
+<div>
+    <img src="nigh.jpg" id="bird" width="100" height="100" onclick="swapImage()">
+    <script>
+        var useImage=1;
+        function swapImage(){
+            switch(useImage){
+                case 1:
+                document.getElementById('bird').src="gull.jpg";
+                useImage=2;
+                break;
+                case 2:
+                document.getElementById('bird').src="angle.jpg";
+                useImage=1;
+                break;
+               
+
+            }
+        }
+    
+    </script>
+
+</div>
 
 </body>
 </html> 
