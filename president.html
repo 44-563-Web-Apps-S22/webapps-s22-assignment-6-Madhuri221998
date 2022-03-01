@@ -40,27 +40,33 @@
     }
     </script>
 <div>
-    <img src="nigh.jpg" id="bird" width="100" height="100" onclick="swapImage()">
+    <img src="gull.jpg" id="bird" width="100" height="100" onclick="swapImage()">
     <script>
         var useImage=1;
         function swapImage(){
             switch(useImage){
                 case 1:
-                document.getElementById('bird').src="gull.jpg";
+                document.getElementById('bird').src="nigh.jpg";
                 useImage=2;
                 break;
                 case 2:
                 document.getElementById('bird').src="angle.jpg";
+                useImage=3;
+                break;
+                case 3:
+                document.getElementById('bird').src="gull.jpg";
                 useImage=1;
                 break;
-               
+
 
             }
         }
     
-    </script>
+
+</script>
 
 </div>
+
 
 </body>
 </html> 
